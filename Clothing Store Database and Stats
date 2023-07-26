@@ -1,0 +1,28 @@
+--Create a clothing store database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, section TEXT, price INTEGER, popularity INTEGER);
+
+INSERT INTO store VALUES (1, "sandals", "shoes" , 34.99, 85);
+INSERT INTO store VALUES (2, "boots", "shoes", 79.99, 20);
+INSERT INTO store VALUES (3, "heels", "shoes", 115.00, 70);
+INSERT INTO store VALUES (4, "leggings", "womens", 19.99, 92);
+INSERT INTO store VALUES (5, "sports bras", "womens", 24.99, 64);
+INSERT INTO store VALUES (6, "tank tops", "womens", 14.99, 38);
+INSERT INTO store VALUES (7, "button up shirts", "mens",34.99, 57);
+INSERT INTO store VALUES (8, "ties", "mens", 19.99, 23);
+INSERT INTO store VALUES (9, "dress pants", "mens",54.99, 40);
+INSERT INTO store VALUES (10, "onesie", "baby", 9.99, 49);
+INSERT INTO store VALUES (11, "bibs", "baby", 5.99, 36);
+INSERT INTO store VALUES (12, "infant socks", "baby", 7.99, 45);
+INSERT INTO store VALUES (13,"wallets", "accessories", 19.99, 24);
+INSERT INTO store VALUES (14, "handbags","accessories", 115.99, 72);
+INSERT INTO store VALUES (15, "belts","accessories", 14.99, 15);
+
+--Display the database ordered by price
+SELECT * FROM store ORDER BY price;
+
+--what is the avg price of items in the womens section?
+SELECT AVG (price) "avg womens price" FROM store WHERE section = "womens";
+
+--what are the 5 most popular items?
+SELECT item, price, popularity FROM store ORDER BY popularity LIMIT 5;
